@@ -104,7 +104,7 @@ print('status code:', response.status_code)
 # Decoding json into dataframe
 decoded = response.json()
 data = pd.json_normalize(decoded)
-data.sample(5)
+data.head(5)
 # %%
 # Getting information from API
 # Lets take a subset of our dataframe keeping only the features we want and the flight number, and date_utc.
