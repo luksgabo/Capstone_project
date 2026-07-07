@@ -194,5 +194,3 @@ data_falcon9 = pd.read_csv('data_falcon9_static.csv')
 
 # export to CSV 
 data_falcon9.to_csv('dataset_part_1.csv', index=False)
-
-# %%
