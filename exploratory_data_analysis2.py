@@ -83,7 +83,9 @@ categorical_cols = features.select_dtypes(['object', 'string', ])
 display(numerical_cols,
 categorical_cols)
 # %% Create dummy variables to categorical columns
-features_one_hot = pd.get_dummies(categorical_cols)
+features_one_hot = pd.concat([numerical_cols, 
+                             pd.get_dummies(categorical_cols) ],
+                             axis=1)
 features_one_hot = features_one_hot.astype('float64')
 # %% Export as CSV
 features_one_hot.to_csv('dataset_part3.csv', index=False)
