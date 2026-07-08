@@ -9,11 +9,13 @@ from folium.plugins import MousePosition
 # Import folium DivIcon plugin
 from folium.features import DivIcon
 from IPython.display import display
-
+import plotly.express as px
 # %% Download and read the `spacex_launch_geo.csv`
 spacex_csv_file = wget.download('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/spacex_launch_geo.csv')
 spacex_df=pd.read_csv(spacex_csv_file)
 display(spacex_df.head())
+
+#%%
 
 # Select relevant sub-columns: `Launch Site`, `Lat(Latitude)`, `Long(Longitude)`, `class`
 spacex_df = spacex_df[['Launch Site', 'Lat', 'Long', 'class']]
