@@ -1,0 +1,367 @@
+% Outer theme for dscapstonetemplatecoursera
+\mode<presentation>
+
+\usepackage{etoolbox}
+\RequirePackage{tikz}
+\usetikzlibrary{positioning}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Default Frame title
+\setbeamertemplate{frametitle}{%
+  \vspace{0.5cm}
+  \hspace{1em}{\usebeamerfont{frametitle}\insertframetitle}
+  \vspace{0.2cm}
+}
+
+% --- Slide Layout Environments ---
+\newenvironment{titleslide}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[titleslide]
+  \setbeamertemplate{framesubtitle}[titleslide]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Title Slide
+\defbeamertemplate{frametitle}{titleslide}{%
+  \begin{tikzpicture}[remember picture, overlay]
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Title Slide (now integrated above)
+\defbeamertemplate{framesubtitle}{titleslide}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{sectionheader}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[sectionheader]
+  \setbeamertemplate{framesubtitle}[sectionheader]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Section Header
+\defbeamertemplate{frametitle}{sectionheader}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.068, 0.249)
+    \node[anchor=north west, text width=0.863\paperwidth] at ([xshift=0.068\paperwidth, yshift=-0.249\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Section Header (now integrated above)
+\defbeamertemplate{framesubtitle}{sectionheader}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{twocontent}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[twocontent]
+  \setbeamertemplate{framesubtitle}[twocontent]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Two Content
+\defbeamertemplate{frametitle}{twocontent}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.053)
+    \node[anchor=north west, text width=0.863\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.053\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Two Content (now integrated above)
+\defbeamertemplate{framesubtitle}{twocontent}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{comparison}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[comparison]
+  \setbeamertemplate{framesubtitle}[comparison]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Comparison
+\defbeamertemplate{frametitle}{comparison}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.053)
+    \node[anchor=north west, text width=0.863\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.053\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Comparison (now integrated above)
+\defbeamertemplate{framesubtitle}{comparison}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{titleonly}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[titleonly]
+  \setbeamertemplate{framesubtitle}[titleonly]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Title Only
+\defbeamertemplate{frametitle}{titleonly}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.053)
+    \node[anchor=north west, text width=0.863\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.053\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Title Only (now integrated above)
+\defbeamertemplate{framesubtitle}{titleonly}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{blank}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[blank]
+  \setbeamertemplate{framesubtitle}[blank]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Blank
+\defbeamertemplate{frametitle}{blank}{%
+  \begin{tikzpicture}[remember picture, overlay]
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Blank (now integrated above)
+\defbeamertemplate{framesubtitle}{blank}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{contentwithcaption}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[contentwithcaption]
+  \setbeamertemplate{framesubtitle}[contentwithcaption]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Content with Caption
+\defbeamertemplate{frametitle}{contentwithcaption}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.067)
+    \node[anchor=north west, text width=0.323\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.067\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Content with Caption (now integrated above)
+\defbeamertemplate{framesubtitle}{contentwithcaption}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{picturewithcaption}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[picturewithcaption]
+  \setbeamertemplate{framesubtitle}[picturewithcaption]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Picture with Caption
+\defbeamertemplate{frametitle}{picturewithcaption}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.067)
+    \node[anchor=north west, text width=0.323\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.067\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Picture with Caption (now integrated above)
+\defbeamertemplate{framesubtitle}{picturewithcaption}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{titleandverticaltext}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[titleandverticaltext]
+  \setbeamertemplate{framesubtitle}[titleandverticaltext]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Title and Vertical Text
+\defbeamertemplate{frametitle}{titleandverticaltext}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.053)
+    \node[anchor=north west, text width=0.863\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.053\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Title and Vertical Text (now integrated above)
+\defbeamertemplate{framesubtitle}{titleandverticaltext}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{verticaltitleandtext}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[verticaltitleandtext]
+  \setbeamertemplate{framesubtitle}[verticaltitleandtext]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Vertical Title and Text
+\defbeamertemplate{frametitle}{verticaltitleandtext}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.716, 0.053)
+    \node[anchor=north west, text width=0.216\paperwidth] at ([xshift=0.716\paperwidth, yshift=-0.053\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Vertical Title and Text (now integrated above)
+\defbeamertemplate{framesubtitle}{verticaltitleandtext}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{1blank}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[1blank]
+  \setbeamertemplate{framesubtitle}[1blank]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for 1_Blank
+\defbeamertemplate{frametitle}{1blank}{%
+  \begin{tikzpicture}[remember picture, overlay]
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for 1_Blank (now integrated above)
+\defbeamertemplate{framesubtitle}{1blank}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{1verticaltitleandtext}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[1verticaltitleandtext]
+  \setbeamertemplate{framesubtitle}[1verticaltitleandtext]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for 1_Vertical Title and Text
+\defbeamertemplate{frametitle}{1verticaltitleandtext}{%
+  \begin{tikzpicture}[remember picture, overlay]
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for 1_Vertical Title and Text (now integrated above)
+\defbeamertemplate{framesubtitle}{1verticaltitleandtext}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\newenvironment{titleandcontent}{%
+  % ACTIVATE the correct templates for this layout
+  \setbeamertemplate{frametitle}[titleandcontent]
+  \setbeamertemplate{framesubtitle}[titleandcontent]
+  % Original code follows
+  \usebackgroundtemplate{}
+  \setbeamercolor{frametitle}{fg=ppttx2}
+  \setbeamercolor{item}{fg=ppttx2}
+}{%
+  % End of layout environment
+}
+
+% Custom frametitle template for Title and Content
+\defbeamertemplate{frametitle}{titleandcontent}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Title placeholder at (0.069, 0.053)
+    \node[anchor=north west, text width=0.863\paperwidth] at ([xshift=0.069\paperwidth, yshift=-0.053\paperheight] current page.north west) {
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+    };
+  \end{tikzpicture}
+}
+
+% Custom framesubtitle template for Title and Content (now integrated above)
+\defbeamertemplate{framesubtitle}{titleandcontent}{%
+  % This template is now integrated into the frametitle template above
+}
+
+
+\mode<all>
