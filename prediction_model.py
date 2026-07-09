@@ -41,6 +41,8 @@ def train_display_plot(method):
     ax = plot_confusion_matrix(Y_test, y_pred)
     ax.set_title(f'Confusion matrix for method {method.estimator}')
 
+    return 100*method.best_score_, 100*method.score(X_test, Y_test)
+
 # %% Reading datasets from online storage
 data = pd.read_csv("https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/dataset_part_2.csv")
 # data features 
@@ -59,8 +61,9 @@ test_size=0.2, random_state=2)
 # %% Logistic Regression
 logreg = LogisticRegression()
 logreg_cv = GridSearchCV(logreg, 
-param_grid={'C':[0.01,0.1,1], 'penalty':['l2',], 'solver':['lbfgs']}, cv = 10)
-train_display_plot(logreg_cv)
+param_grid={'C':[0.01,0.1,1], 
+            'l1_ratio':[0,], 'solver':['lbfgs']}, cv = 10)
+log_acc, log_score = train_display_plot(logreg_cv)
 
 # %% Support Vector Machine
 svm = SVC()
@@ -68,18 +71,18 @@ parameters = {'kernel':('linear', 'rbf','poly','rbf', 'sigmoid'),
               'C': np.logspace(-3, 3, 5),
               'gamma':np.logspace(-3, 3, 5)}
 svm_cv = GridSearchCV(svm, param_grid=parameters, cv=10, )
-train_display_plot(svm_cv)
+svm_acc, svm_score = train_display_plot(svm_cv)
 
 # %% Decision Tree classifier
 dtree = DecisionTreeClassifier()
 parameters = {'criterion': ['gini', 'entropy'],
      'splitter': ['best', 'random'],
-     'max_depth': [2*n for n in range(1,10)],
-     'max_features': ['auto', 'sqrt'],
+     'max_depth': [n for n in range(1,9)],
+     'max_features': ['sqrt'],
      'min_samples_leaf': [1, 2, 4],
      'min_samples_split': [2, 5, 10]}
 tree_cv = GridSearchCV(dtree, param_grid=parameters, cv = 10 )
-train_display_plot(tree_cv)
+tree_acc, tree_score = train_display_plot(tree_cv)
 
 # %% K-nearest neighbors
 parameters = {'n_neighbors': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -88,4 +91,15 @@ parameters = {'n_neighbors': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 
 KNN = KNeighborsClassifier()
 knn_cv = GridSearchCV(KNN, param_grid=parameters, cv=10)
-train_display_plot(knn_cv)
+knn_acc, knn_score = train_display_plot(knn_cv)
+
+#%%
+fig, ax = plt.subplots(figsize=(6, 4),)
+
+ax = sns.barplot(x = ['Logistic reg.', 'SVM', 'Tree Decision', 'KNN'],
+            y = [log_acc, svm_acc, tree_acc, knn_acc ], color='orange')
+ax.set_title('Models accuracy')
+ax.set_ylabel('Accuracy (%)',) 
+ax.set_xlabel('Models')
+ax.set_ylim([80, None])
+# %%
